@@ -1,0 +1,30 @@
+/* Server Side coding*/
+
+package net.roseindia;
+public class HelloWorldService 
+{
+  public String sayHello(String name) {
+  System.out.println("Hello World Service called");
+  return "Hello : " + name;
+  }
+}
+
+/*Client Side Coding*/
+package net.roseindia; 
+import net.roseindia.*; 
+import net.roseindia.HelloWorldServiceStub.SayHello;
+public class Test {
+ public static void main(String[] args) throws Exception {
+ HelloWorldServiceStub stub = new HelloWorldServiceStub();
+ //Create the request
+
+  net.roseindia.HelloWorldServiceStub.SayHello  request = new 
+   net.roseindia.HelloWorldServiceStub.SayHello();
+
+  request.setArgs0("Saurabh Wani");
+ //Invoke the service
+  net.roseindia.HelloWorldServiceStub.SayHelloResponse response 
+  = stub.sayHello(request);
+  System.out.println("Response : " + response.get_return());
+  }
+}  
